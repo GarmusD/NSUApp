@@ -1,0 +1,41 @@
+﻿<local:UIPropertiesBasePage
+    x:Class="NSU.NSU_UWP.NSUSysItems.Properties.UILabelProperties"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:NSU.NSU_UWP.NSUSysItems.Properties"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Grid x:Name="LayoutRoot">
+    <Grid x:Name="PropertiesOutput" Margin="0,0,25,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Column="0" Grid.Row="0" Text="UI Pavadinimas:" Style="{StaticResource PropertiesTextBlockStyle }" />
+        <TextBox x:Name="UIName" Grid.Column="1" Grid.Row="0" Style="{StaticResource PropertiesTextBoxStyle}"/>
+        <TextBlock Grid.Column="0" Grid.Row="1" Style="{StaticResource PropertiesTextBlockStyle}" Text="Tekstas:" />
+        <TextBox x:Name="UIText" Grid.Column="1" Grid.Row="1" Style="{StaticResource PropertiesTextBoxStyle}"/>
+        <TextBlock Grid.Column="0" Grid.Row="2" Style="{StaticResource PropertiesTextBlockStyle}" Text="Veiksmas:" />
+        <ComboBox x:Name="UIAction" Grid.Column="1" Grid.Row="2" Style="{StaticResource PropertiesComboBoxStyle}" SelectedIndex="0" >
+            <ComboBoxItem Content="Nėra"/>
+            <ComboBoxItem Content="KatilasStatus"/>
+        </ComboBox>
+        <TextBlock Grid.Column="0" Grid.Row="3" Style="{StaticResource PropertiesTextBlockStyle}" Text="Pozicija X:" />
+        <TextBox x:Name="UILeft" Grid.Column="1" Grid.Row="3" Style="{StaticResource PropertiesTextBoxStyle}"/>
+        <TextBlock Grid.Column="0" Grid.Row="4" Style="{StaticResource PropertiesTextBlockStyle}" Text="Pozicija Y:" />
+        <TextBox x:Name="UIRight" Grid.Column="1" Grid.Row="4" Style="{StaticResource PropertiesTextBoxStyle}"/>
+        
+    </Grid>
+    </Grid>
+</local:UIPropertiesBasePage>

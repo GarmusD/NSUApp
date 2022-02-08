@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/rootLayout"
+    android:gravity="center">
+	<LinearLayout
+		android:orientation="horizontal"
+        android:minWidth="800px"
+        android:minHeight="480dp"
+        android:layout_width="800px"
+        android:layout_height="480px"
+        android:id="@+id/mainContainer">
+		<NSU.Droid.MyWindow
+            android:minWidth="712px"
+            android:layout_width="712px"
+            android:layout_height="match_parent"
+            android:id="@+id/mainWindow"
+            android:background="@drawable/window_shape"            
+			android:scrollbars="none"/>
+			<NSU.Droid.SideWindow
+				android:orientation="vertical"
+				android:gravity="center_horizontal"
+				android:minWidth="84px"
+                android:layout_width="84px"
+                android:layout_height="match_parent"
+                android:background="@drawable/sidewindow_shape"
+                android:id="@+id/sideWindow"
+                android:scrollbars="none" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,122 @@
+﻿<Page
+    x:Class="NSU.NSU_UWP.Pages.NSUSysItems.ComfortZonesPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:NSU.NSU_UWP.Pages.NSUSysItems"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="using:NSU.NSU_UWP.ViewModels.Models"
+    xmlns:converters="using:NSU.NSU_UWP.ViewModels.Converters"
+    mc:Ignorable="d"
+    DataContext="ComfortZonesData"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles/SettingsPagesStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <converters:ChannelDataConverter x:Key="ChannelDataConverter"/>
+            <converters:NameClassConverter x:Key="NameClassConverter"/>
+
+            <DataTemplate x:Key="ComfortZoneTemplate" x:DataType="models:ComfortZoneModel">
+                <Grid Margin="0,0,0,30">
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"></ColumnDefinition>
+                        <ColumnDefinition Width="80"></ColumnDefinition>
+                        <ColumnDefinition Width="150"></ColumnDefinition>
+                        <ColumnDefinition Width="150"></ColumnDefinition>
+                        <ColumnDefinition Width="200"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="{x:Bind Index, Mode=OneWay}" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center"/>
+                    
+                    <CheckBox Grid.Column="1" Grid.Row="0" MinWidth="20" IsChecked="{x:Bind Enabled, Mode=TwoWay}" HorizontalAlignment="Center"/>
+                    
+                    <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="2" Margin="5,0">
+                        <TextBlock Text="ID" Style="{StaticResource NSUCaptionTextBlockStyle}"/>
+                        <TextBox Text="{x:Bind Name,Mode=TwoWay}"/>
+                    </StackPanel>
+                    
+                    <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="3" Margin="5,0,5,5">
+                        <TextBlock Text="Pavadinimas" Style="{StaticResource NSUCaptionTextBlockStyle}"/>
+                        <TextBox Text="{x:Bind Title,Mode=TwoWay}"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="4">
+                        <TextBlock Text="Kolektorius" Style="{StaticResource NSUCaptionTextBlockStyle}"/>
+                        <ComboBox ItemsSource="{x:Bind CollectorNameList, Mode=OneWay}" SelectedItem="{x:Bind CollectorNameSelection, Mode=TwoWay, Converter={StaticResource NameClassConverter}}" Width="Auto" HorizontalAlignment="Stretch"></ComboBox>
+                    </StackPanel>
+                    
+                    <TextBlock Text="Temperatūros" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" Style="{StaticResource NSUTitleTextBlockStyle}"></TextBlock>
+
+                    <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="4">
+                        <TextBlock Text="Kanalas:"/>
+                        <ComboBox ItemsSource="{x:Bind ActuatorChannelList}" SelectedItem="{x:Bind ActuatorSelection, Mode=TwoWay, Converter={StaticResource ChannelDataConverter}}" DisplayMemberPath="Value" Width="Auto" HorizontalAlignment="Stretch" Margin="10,0,0,0">
+                        </ComboBox>
+                    </StackPanel>
+                    
+                    <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="2" Margin="5,0,5,5">
+                        <TextBlock Text="Kambario" Style="{StaticResource NSUCaptionTextBlockStyle}"/>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="Sensorius"></TextBlock>
+                            <ComboBox ItemsSource="{x:Bind TempSensorNameList}" DisplayMemberPath="Name" SelectedItem="{x:Bind RoomTSensorNameSelection,Mode=TwoWay,Converter={StaticResource NameClassConverter}}" HorizontalAlignment="Stretch"></ComboBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <StackPanel Orientation="Vertical" Width="65" Margin="0,0,5,0">
+                                <TextBlock Text="Hi" Style="{StaticResource NSUCaptionTextBlockStyle}"/>
+                                <TextBox Text="{x:Bind RoomTempHi,Mode=TwoWay}"></TextBox>
+                            </StackPanel>
+                            <StackPanel Orientation="Vertical" Width="65" Margin="5,0,0,0">
+                                <TextBlock Text="Low" Style="{StaticResource NSUCaptionTextBlockStyle}"/>
+                                <TextBox Text="{x:Bind RoomTempLow,Mode=TwoWay}"></TextBox>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                    
+                    <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="3" Margin="5,0,5,5">
+                        <TextBlock Text="Grindų" Style="{StaticResource NSUCaptionTextBlockStyle}"/>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="Sensorius"></TextBlock>
+                            <ComboBox ItemsSource="{x:Bind TempSensorNameList, Mode=OneWay}" DisplayMemberPath="Name" SelectedItem="{x:Bind FloorTSensorNameSelection,Mode=TwoWay,Converter={StaticResource NameClassConverter}}" HorizontalAlignment="Stretch"></ComboBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <StackPanel Orientation="Vertical" Width="65" Margin="0,0,5,0">
+                                <TextBlock Text="Hi" Style="{StaticResource NSUCaptionTextBlockStyle}"/>
+                                <TextBox Text="{x:Bind FloorTempHi,Mode=TwoWay}"></TextBox>
+                            </StackPanel>
+                            <StackPanel Orientation="Vertical" Width="65" Margin="5,0,0,0">
+                                <TextBlock Text="Low" Style="{StaticResource NSUCaptionTextBlockStyle}"/>
+                                <TextBox Text="{x:Bind FloorTempLow,Mode=TwoWay}"></TextBox>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <CheckBox IsChecked="{x:Bind LowTempMode,Mode=TwoWay}" Grid.Row="2" Grid.Column="4" VerticalAlignment="Bottom" HorizontalAlignment="Center" Content="Low Temp Mode"></CheckBox>
+                </Grid>
+            </DataTemplate>
+        </ResourceDictionary>
+    </Page.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50"></ColumnDefinition>
+            <ColumnDefinition Width="80"></ColumnDefinition>
+            <ColumnDefinition Width="150"></ColumnDefinition>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Nr" Style="{StaticResource NSUTitleTextBlockStyle}"/>
+        <TextBlock Grid.Row="0" Grid.Column="1" Text="Įgalintas" Style="{StaticResource NSUTitleTextBlockStyle}"/>
+        <TextBlock Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" Text="Parametrai" Style="{StaticResource NSUTitleTextBlockStyle}"/>
+        <ListBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5" ItemTemplate="{StaticResource ComfortZoneTemplate}" ItemsSource="{x:Bind ComfortZonesData}" HorizontalAlignment="Stretch"/>
+    </Grid>
+</Page>

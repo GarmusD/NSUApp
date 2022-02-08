@@ -1,0 +1,91 @@
+﻿<Page
+    x:Class="NSU.NSU_UWP.Pages.NSUSysItems.CircPumpsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:NSU.NSU_UWP.Pages.NSUSysItems"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:models="using:NSU.NSU_UWP.ViewModels.Models"
+    xmlns:converters="using:NSU.NSU_UWP.ViewModels.Converters"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles/SettingsPagesStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <converters:NameClassConverter x:Key="NameClassConv"/>
+            <converters:ChannelDataConverter x:Key="ChannelDataConv"/>
+
+            <DataTemplate x:Key="CircPumpTemplate" x:DataType="models:CircPumpModel">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"></ColumnDefinition>
+                        <ColumnDefinition Width="80"></ColumnDefinition>
+                        <ColumnDefinition Width="200"></ColumnDefinition>
+                        <ColumnDefinition Width="200"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="{x:Bind Index,Mode=OneWay}" Grid.Row="0" Grid.Column="0"/>
+                    <CheckBox IsChecked="{x:Bind Enabled, Mode=TwoWay}" Grid.Row="0" Grid.Column="1" MinWidth="20" HorizontalAlignment="Center"/>
+
+                    <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="2" Margin="5,0">
+                        <TextBlock Text="ID" Style="{StaticResource NSUCaptionTextBlockStyle}" HorizontalAlignment="Left"/>
+                        <TextBox Text="{x:Bind Name}"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="3" Margin="5,0">
+                        <TextBlock Text="Temp. trigeris" Style="{StaticResource NSUCaptionTextBlockStyle}" HorizontalAlignment="Left"/>
+                        <ComboBox ItemsSource="{x:Bind TempTriggerNamesList,Mode=OneWay}" SelectedItem="{x:Bind TempTriggerSelection, Mode=TwoWay, Converter={StaticResource NameClassConv}}" HorizontalAlignment="Stretch"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Margin="0,15,0,0">
+                        <StackPanel Orientation="Vertical" Margin="5,0" Width="90">
+                            <TextBlock Text="Max greitis" Style="{StaticResource NSUCaptionTextBlockStyle}"></TextBlock>
+                            <ComboBox ItemsSource="{x:Bind SpeedList, Mode=OneWay}" SelectedItem="{x:Bind MaxSpeed,Mode=TwoWay}" HorizontalAlignment="Stretch"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Vertical" Margin="5,0" Width="90">
+                            <TextBlock Text="1 kanalas" Style="{StaticResource NSUCaptionTextBlockStyle}"></TextBlock>
+                            <ComboBox ItemsSource="{x:Bind ChannelsList, Mode=OneWay}" SelectedItem="{x:Bind Speed1ChannelSelection, Mode=TwoWay, Converter={StaticResource ChannelDataConv }}" HorizontalAlignment="Stretch"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Vertical" Margin="5,0" Width="90">
+                            <TextBlock Text="2 kanalas" Style="{StaticResource NSUCaptionTextBlockStyle}"></TextBlock>
+                            <ComboBox ItemsSource="{x:Bind ChannelsList, Mode=OneWay}" SelectedItem="{x:Bind Speed2ChannelSelection, Mode=TwoWay, Converter={StaticResource ChannelDataConv}}" HorizontalAlignment="Stretch"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Vertical" Margin="5,0" Width="90">
+                            <TextBlock Text="3 kanalas" Style="{StaticResource NSUCaptionTextBlockStyle}"></TextBlock>
+                            <ComboBox ItemsSource="{x:Bind ChannelsList, Mode=OneWay}" SelectedItem="{x:Bind Speed3ChannelSelection, Mode=TwoWay, Converter={StaticResource ChannelDataConv}}" HorizontalAlignment="Stretch"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </DataTemplate>
+        </ResourceDictionary>
+    </Page.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50"></ColumnDefinition>
+            <ColumnDefinition Width="80"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Nr" Grid.Row="0" Grid.Column="0" Style="{StaticResource NSUTitleTextBlockStyle}"/>
+        <TextBlock Text="Įgalintas" Grid.Row="0" Grid.Column="1" Style="{StaticResource NSUTitleTextBlockStyle}"/>
+        <TextBlock Text="Parametrai" Grid.Row="0" Grid.Column="2" Style="{StaticResource NSUTitleTextBlockStyle}"/>
+        <ListBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5" ItemTemplate="{StaticResource CircPumpTemplate}" ItemsSource="{x:Bind CircPumpsData}"/>
+    </Grid>
+</Page>

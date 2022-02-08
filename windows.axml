@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/rootLayout"
+    android:gravity="center">
+    <NSU.Droid.ScalingLinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="800px"
+        android:layout_height="480px"
+        android:id="@+id/mainContainer"
+        android:gravity="center">
+        <NSU.Droid.MyWindow
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/mainWindow"
+            android:layout_weight="1"
+            android:background="@drawable/window_shape"
+            android:layout_margin="1dp" />
+        <LinearLayout
+            android:minWidth="86px"
+            android:minHeight="25px"
+            android:layout_width="86px"
+            android:layout_height="match_parent"
+            android:background="@drawable/sidewindow_shape"
+            android:layout_margin="1dp"
+            android:scrollbars="none">
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <NSU.Droid.SideWindow
+                    android:orientation="vertical"
+                    android:minWidth="86px"
+                    android:minHeight="25px"
+                    android:layout_width="86px"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/sideWindow"
+                    android:scrollbars="none" />
+            </ScrollView>
+        </LinearLayout>
+    </NSU.Droid.ScalingLinearLayout>
+</RelativeLayout>

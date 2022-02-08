@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="hello">Hello World, Click Me!</string>
+	<string name="app_name">NSU</string>
+	<string name="strPassword">Slaptažodis</string>
+	<string name="strLoginErrorTitle">Prisijungimo klaida</string>
+	<string name="strBadUsrNamePassword">Neteisingas prisijungimo vardas ir/arba slaptažodis.</string>
+	<string name="strConnectTimeoutTitle">Prisijungimo laikas baigėsi</string>
+	<string name="strBadHost">Neteisingas NSUServerio adresas?</string>
+	<string name="strPlotBtn1DayText">1 diena</string>
+	<string name="strPlotBtn2DaysText">2 dienos</string>
+	<string name="strPlotBtn7DaysText">7 dienos</string>
+	<string name="strPlotBtn14DaysText">14 dienų</string>
+	<string name="strPlotBtn30DaysText">30 dienų</string>
+	<string name="strPlotBtnRefresh">Atnaujinti</string>
+</resources>

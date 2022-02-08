@@ -1,0 +1,46 @@
+﻿<Page
+    x:Class="NSU.NSU_UWP.Pages.NSUSysItems.RelayModulesPage"
+    xmlns:models="using:NSU.NSU_UWP.ViewModels.Models"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"    
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    
+    <Page.Resources>
+        <DataTemplate x:Key="RelayModuleTemplate" x:DataType="models:RelayModuleModel">
+            <Grid Margin="0, 5, 0, 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"></ColumnDefinition>
+                    <ColumnDefinition Width="100"></ColumnDefinition>
+                    <ColumnDefinition Width="100"></ColumnDefinition>
+                    <ColumnDefinition Width="100"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="{x:Bind Index, Mode=OneWay}"></TextBlock>
+                <CheckBox Grid.Column="1" IsChecked="{x:Bind Enabled, Mode=TwoWay}" HorizontalAlignment="Center" Margin="5,0" MinWidth="20" />
+                <CheckBox Grid.Column="2" IsChecked="{x:Bind ActiveLow, Mode=TwoWay}" HorizontalAlignment="Center" Margin="5,0" MinWidth="20" />
+                <CheckBox Grid.Column="3" IsChecked="{x:Bind LeftToRight, Mode=TwoWay}" HorizontalAlignment="Center" Margin="5,0" MinWidth="20"/>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50"></ColumnDefinition>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Nr" FontWeight="Bold" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center"/>
+        <TextBlock Text="Įgalintas" FontWeight="Bold" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center"/>
+        <TextBlock Text="ActiveLow" FontWeight="Bold" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center"/>
+        <TextBlock Text="LeftToRight" FontWeight="Bold" Grid.Row="0" Grid.Column="3" HorizontalAlignment="Center"/>
+        <ListBox x:Name="RelayModuleList" ItemTemplate="{StaticResource RelayModuleTemplate}" ItemsSource="{x:Bind RelayModulesData}" SelectionMode="Single" Grid.Row="1" Grid.ColumnSpan="5"/>
+    </Grid>
+</Page>

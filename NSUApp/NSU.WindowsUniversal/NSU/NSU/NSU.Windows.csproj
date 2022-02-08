@@ -1,0 +1,486 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{41F23E0A-D938-4E8E-8B6E-628D4BA933AF}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NSU.NSU_UWP</RootNamespace>
+    <AssemblyName>NSUApp</AssemblyName>
+    <DefaultLanguage>lt-lt</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion>10.0.16299.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <EnableDotNetNativeCompatibleProfile>true</EnableDotNetNativeCompatibleProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PackageCertificateKeyFile>NSU_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <RuntimeIdentifiers>win10-arm;win10-arm-aot;win10-x86;win10-x86-aot;win10-x64;win10-x64-aot</RuntimeIdentifiers>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <PRIResource Include="Resources.resw" />
+    <PRIResource Include="strings\Strings.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\NSUSysItems\Console.xaml.cs">
+      <DependentUpon>Console.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\NSUSysItems\WaterBoilerPage.xaml.cs">
+      <DependentUpon>WaterBoilerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\NSUSysItems\WoodBoilerPage.xaml.cs">
+      <DependentUpon>WoodBoilerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\Helpers\ChannelData.cs" />
+    <Compile Include="ViewModels\DataCollections.cs" />
+    <Compile Include="ViewModels\Models\WaterBoilerModel.cs" />
+    <Compile Include="ViewModels\Models\WoodBoilerModel.cs" />
+    <Compile Include="ViewModels\Helpers\NameClass.cs" />
+    <Compile Include="ViewModels\Helpers\SortedObservableCollection.cs" />
+    <Compile Include="ViewModels\Models\CircPumpModel.cs" />
+    <Compile Include="ViewModels\Models\ComfortZoneModel.cs" />
+    <Compile Include="ViewModels\Converters\Converters.cs" />
+    <Compile Include="ViewModels\Models\CollectorModel.cs" />
+    <Compile Include="ViewModels\Models\KTypeModel.cs" />
+    <Compile Include="ViewModels\Models\ModelBase.cs" />
+    <Compile Include="ViewModels\Models\RelayModuleModel.cs" />
+    <Compile Include="ViewModels\Models\TempTriggerModel.cs" />
+    <Compile Include="ViewModels\Models\TSensorModel.cs" />
+    <Compile Include="Dialogs\ComfortZoneSettingsDialog.xaml.cs">
+      <DependentUpon>ComfortZoneSettingsDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\ConnectDialog.xaml.cs">
+      <DependentUpon>ConnectDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\SensorChartDialog.xaml.cs">
+      <DependentUpon>SensorChartDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LabeledControls\LabeledComboBox.xaml.cs">
+      <DependentUpon>LabeledComboBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Builder\Properties\UIBtnProperties.xaml.cs">
+      <DependentUpon>UIBtnProperties.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Builder\Properties\UICircPumpProperties.xaml.cs">
+      <DependentUpon>UICircPumpProperties.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Builder\Properties\UILabelProperties.xaml.cs">
+      <DependentUpon>UILabelProperties.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Builder\Properties\UINoProperties.xaml.cs">
+      <DependentUpon>UINoProperties.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Builder\Properties\UIPropertiesBasePage.cs" />
+    <Compile Include="Pages\Builder\ScenarioBuilderPage.xaml.cs">
+      <DependentUpon>ScenarioBuilderPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\grafikai.xaml.cs">
+      <DependentUpon>grafikai.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Katiline.xaml.cs">
+      <DependentUpon>Katiline.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MyUserControl1.xaml.cs">
+      <DependentUpon>MyUserControl1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\NSUSysItems\CircPumpsPage.xaml.cs">
+      <DependentUpon>CircPumpsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\NSUSysItems\CollectorsPage.xaml.cs">
+      <DependentUpon>CollectorsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\NSUSysItems\ComfortZonesPage.xaml.cs">
+      <DependentUpon>ComfortZonesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\NSUSysItems\KTypePage.xaml.cs">
+      <DependentUpon>KTypePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\NSUSysItems\RelayModulesPage.xaml.cs">
+      <DependentUpon>RelayModulesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\NSUSysItems\TempTriggersPage.xaml.cs">
+      <DependentUpon>TempTriggersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Nustatymai.xaml.cs">
+      <DependentUpon>Nustatymai.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\NSUSysItems\TSensorsPage.xaml.cs">
+      <DependentUpon>TSensorsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TestPage.xaml.cs">
+      <DependentUpon>TestPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\Elements\UIComfortZone.cs" />
+    <Compile Include="UI\Elements\UISideElementBase.cs" />
+    <Compile Include="UI\Elements\UISideGroupSwitch.cs" />
+    <Compile Include="UI\Elements\UISideSwitch.cs" />
+    <Compile Include="UI\Elements\UISideWindowSwitch.cs" />
+    <Compile Include="UI\Elements\UIWeatherInfo.cs" />
+    <Compile Include="UI\NSUWindow.cs" />
+    <Compile Include="UI\NSUWindows\SideWindow.cs" />
+    <Compile Include="UI\NSUWindows\Window.cs" />
+    <Compile Include="UI\NSUWindows\WindowsGroup.cs" />
+    <Compile Include="UI\NSUWindows\WindowsManager.cs" />
+    <Compile Include="UI\Elements\UIButton.cs" />
+    <Compile Include="UI\Elements\UICircPump.cs" />
+    <Compile Include="UI\Elements\UIConsts.cs" />
+    <Compile Include="UI\Elements\UIDrawer.cs" />
+    <Compile Include="UI\Elements\UIGraphics.cs" />
+    <Compile Include="UI\Elements\UILabel.cs" />
+    <Compile Include="UI\Elements\UILadomatas.cs" />
+    <Compile Include="UI\Elements\UIMonoBitmap.cs" />
+    <Compile Include="UI\Elements\UITempBar.cs" />
+    <Compile Include="UI\Elements\UITempLabel.cs" />
+    <Compile Include="UI\Elements\UIExhaustFan.cs" />
+    <Compile Include="LabeledControls\LabeledTextBox.xaml.cs">
+      <DependentUpon>LabeledTextBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Net\NetNotifier.cs" />
+    <Compile Include="Net\NSUSocket.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <AdditionalFiles Include="MCUResources\back.nsu">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AdditionalFiles>
+    <AdditionalFiles Include="MCUResources\h_w_off.nsu">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AdditionalFiles>
+    <AdditionalFiles Include="MCUResources\h_w_on.nsu">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AdditionalFiles>
+    <AdditionalFiles Include="MCUResources\saule.nsu">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AdditionalFiles>
+    <AdditionalFiles Include="MCUResources\snaige.nsu">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AdditionalFiles>
+    <AdditionalFiles Include="MCUResources\tmp_down.nsu">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AdditionalFiles>
+    <AdditionalFiles Include="MCUResources\tmp_up.nsu">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AdditionalFiles>
+    <None Include="NSU_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\MainScreen\KKK_ATMOS.png" />
+    <Content Include="Assets\MainScreen\LineChart.png" />
+    <Content Include="Assets\MainScreen\Settings.png" />
+    <Content Include="Assets\UIButtons\UIBtn-Boileris.png" />
+    <Content Include="Assets\UIButtons\UIBtn-BTN.png" />
+    <Content Include="Assets\UIButtons\UIBtn-Cirkuliacinis1.png" />
+    <Content Include="Assets\UIButtons\UIBtn-Cirkuliacinis2.png" />
+    <Content Include="Assets\UIButtons\UIBtn-Cirkuliacinis3.png" />
+    <Content Include="Assets\UIButtons\UIBtn-Cirkuliacinis4.png" />
+    <Content Include="Assets\UIButtons\UIBtn-Grindys.png" />
+    <Content Include="Assets\UIButtons\UIBtn-Kaminas.png" />
+    <Content Include="Assets\UIButtons\UIBtn-Katilas.png" />
+    <Content Include="Assets\UIButtons\UIBtn-Kolektorius.png" />
+    <Content Include="Assets\UIButtons\UIBtn-Label.png" />
+    <Content Include="Assets\UIButtons\UIBtn-Ladomatas.png" />
+    <Content Include="Assets\UIButtons\UIBtn-Pointer.png" />
+    <Content Include="Assets\UIButtons\UIBtn-Radiatorius.png" />
+    <Content Include="Assets\UIButtons\UIBtn-TempBar.png" />
+    <Content Include="Assets\UIButtons\UIBtn-Trisakis.png" />
+    <Content Include="Assets\UIButtons\UIBtn-Ventiliatorius.png" />
+    <Content Include="Assets\UIComfortZone\btnGraph.png" />
+    <Content Include="Assets\UIComfortZone\btnSettings.png" />
+    <Content Include="Assets\UIComfortZone\CZTermometras.png" />
+    <Content Include="Assets\UIComfortZone\heat_floor.png" />
+    <Content Include="Assets\UIComfortZone\heat_floor_black.png" />
+    <Content Include="Assets\UIComfortZone\heat_floor_blue.png" />
+    <Content Include="Assets\UIComfortZone\heat_floor_green.png" />
+    <Content Include="Assets\UIComfortZone\heat_floor_orange.png" />
+    <Content Include="Assets\UIComfortZone\heat_floor_red.png" />
+    <Content Include="Assets\UIImages\akumuliacine.png" />
+    <Content Include="Assets\UIImages\boileris.png" />
+    <Content Include="Assets\UIImages\cirkuliacinis1.png" />
+    <Content Include="Assets\UIImages\cirkuliacinis2.png" />
+    <Content Include="Assets\UIImages\cirkuliacinis3.png" />
+    <Content Include="Assets\UIImages\cirkuliacinis4.png" />
+    <Content Include="Assets\UIImages\grindys.png" />
+    <Content Include="Assets\UIImages\kaminas.png" />
+    <Content Include="Assets\UIImages\karstas_vanduo_off.png" />
+    <Content Include="Assets\UIImages\karstas_vanduo_on.png" />
+    <Content Include="Assets\UIImages\katilas.png" />
+    <Content Include="Assets\UIImages\kolektorius.png" />
+    <Content Include="Assets\UIImages\ladomatas.png" />
+    <Content Include="Assets\UIImages\radiatorius.png" />
+    <Content Include="Assets\UIImages\saule.png" />
+    <Content Include="Assets\UIImages\snaige.png" />
+    <Content Include="Assets\UIImages\temp_down.png" />
+    <Content Include="Assets\UIImages\temp_up.png" />
+    <Content Include="Assets\UIImages\trisakis1.png" />
+    <Content Include="Assets\UIImages\trisakis2.png" />
+    <Content Include="Assets\UIImages\trisakis3.png" />
+    <Content Include="Assets\UIImages\trisakis4.png" />
+    <Content Include="Assets\UIImages\unknown.png" />
+    <Content Include="Assets\UIImages\ventiliatorius2.png" />
+    <Content Include="Properties\Default.rd.xml" />
+    <Content Include="Assets\LockScreenLogo.scale-200.png" />
+    <Content Include="Assets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Assets\StoreLogo.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Dialogs\ComfortZoneSettingsDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dialogs\ConnectDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dialogs\SensorChartDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LabeledControls\LabeledComboBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Builder\Properties\UIBtnProperties.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Builder\Properties\UICircPumpProperties.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Builder\Properties\UILabelProperties.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Builder\Properties\UINoProperties.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Builder\ScenarioBuilderPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\grafikai.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Katiline.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\MyUserControl1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\NSUSysItems\Console.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\NSUSysItems\CircPumpsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\NSUSysItems\CollectorsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\NSUSysItems\ComfortZonesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\NSUSysItems\KTypePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\NSUSysItems\RelayModulesPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\NSUSysItems\TempTriggersPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\NSUSysItems\WaterBoilerPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\NSUSysItems\WoodBoilerPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Nustatymai.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\NSUSysItems\TSensorsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\TestPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Strings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+    <Page Include="Styles\SettingsPagesStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\UIPropertiesStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LabeledControls\LabeledTextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VisibilityAnimation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets\TileImages\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ApplicationInsights">
+      <Version>2.8.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.ApplicationInsights.PersistenceChannel">
+      <Version>1.2.3</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.ApplicationInsights.WindowsApps">
+      <Version>1.1.1</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
+      <Version>6.1.9</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Toolkit.Uwp.UI.Controls">
+      <Version>4.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Uwp.Managed">
+      <Version>2.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>11.0.2</Version>
+    </PackageReference>
+    <PackageReference Include="WriteableBitmapEx">
+      <Version>1.5.1</Version>
+    </PackageReference>
+  </ItemGroup>
+  <Import Project="..\..\..\Shared\Shared.projitems" Label="Shared" />
+  <Import Project="..\..\..\..\..\Shared\Shared.projitems" Label="Shared" />
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

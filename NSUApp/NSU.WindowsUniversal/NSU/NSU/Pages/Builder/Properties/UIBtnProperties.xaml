@@ -1,0 +1,21 @@
+﻿ <local:UIPropertiesBasePage
+    x:Class="NSU.NSU_UWP.NSUSysItems.Properties.UIBtnProperties"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:NSU.NSU_UWP.NSUSysItems.Properties"
+    xmlns:lblctrls="using:NSU.NSU_UWP.LabeledControls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Grid x:Uid="LayoutRoot">
+        <StackPanel Orientation="Vertical">
+            <lblctrls:LabelledTextBox x:Name="UIName" Label="Vardas:"></lblctrls:LabelledTextBox>
+            <lblctrls:LabelledTextBox x:Name="UIText" Label="Tekstas:"></lblctrls:LabelledTextBox>
+            <ComboBox x:Name="UIAction">
+                <ComboBox.Header>Veiksmas:</ComboBox.Header>
+            </ComboBox>
+            <lblctrls:LabelledTextBox x:Name="UIPosLeft" Label="Pozicija X:"></lblctrls:LabelledTextBox>
+            <lblctrls:LabelledTextBox x:Name="UIPosTop" Label="Pozicija Y:"></lblctrls:LabelledTextBox>
+        </StackPanel>
+    </Grid>
+</local:UIPropertiesBasePage>

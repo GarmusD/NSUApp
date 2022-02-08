@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>f6c37a98-baa3-4609-a375-6334d8fa67ca</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>NSUAppShared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Credentials.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NSUConsts.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NSUSystemParts\BinUploader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NSUSystemParts\CircPumps.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NSUSystemParts\Collectors.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NSUSystemParts\ComfortZones.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NSUSystemParts\Console.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NSUSystemParts\KTypes.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NSUSystemParts\RelayModules.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NSUSystemParts\Switches.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NSUSystemParts\Syscmd.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NSUSystemParts\TempSensors.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NSUSystemParts\TempTriggers.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NSUSystemParts\WaterBoilers.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NSUSystemParts\WoodBoilers.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NSUSystemParts\NSUSysPartsBase.cs" />
+  </ItemGroup>
+</Project>

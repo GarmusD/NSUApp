@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:background="@drawable/ComfortZone_shape">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayoutPavadinimas"
+        android:gravity="center_horizontal">
+        <TextView
+            android:text="Pavadinimas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/CZTitleTextView"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            android:layout_gravity="center_vertical" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:id="@+id/linearLayoutCentriukas"
+        android:paddingTop="2dp"
+        android:background="@drawable/top_bootom_border"
+        android:paddingBottom="2dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp">
+            <ImageView
+                android:src="@drawable/heat_floor"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/CZTermometrasImageView" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <TextView
+                android:text="Large Text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/CZCurrentTemperatureTextView"
+                android:textColor="#0000FF"
+                android:layout_weight="2"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="14sp" />
+            <TextView
+                android:text="Large Text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/CZTemperatureTextView"
+                android:textColor="#0000FF"
+                android:layout_weight="2"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+    <RelativeLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp">
+        <ImageView
+            android:src="@drawable/btnsettings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="5dp"
+            android:id="@+id/CZSettingsImageViewButton"
+            android:clickable="true" />
+        <ImageView
+            android:src="@drawable/btngraph"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"
+            android:id="@+id/CZShowGraphImageViewButton"
+            android:clickable="true" />
+    </RelativeLayout>
+</LinearLayout>

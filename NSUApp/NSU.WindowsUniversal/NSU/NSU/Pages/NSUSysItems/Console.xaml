@@ -1,0 +1,94 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:NSU.NSU_UWP.Pages.NSUSysItems"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    x:Class="NSU.NSU_UWP.Pages.NSUSysItems.ConsolePage"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+        <Storyboard x:Name="BinUploaderStoryboard"/>
+    </Page.Resources>
+
+    <Grid x:Name="mainGrid">
+
+        <ScrollViewer HorizontalAlignment="Stretch" Margin="5,0,0,0" HorizontalScrollMode="Disabled" HorizontalContentAlignment="Stretch">
+            <Grid Margin="0,0,15,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                
+                <!-- Console -->
+                <controls:Expander Header="Konsolė" IsExpanded="True" HorizontalContentAlignment="Stretch" Grid.Row="0">
+                    <Grid x:Name="gridConsole">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <ScrollViewer Name="svConsoleOut" Grid.Row="0" Grid.ColumnSpan="2" Height="500" HorizontalScrollMode="Auto" VerticalScrollMode="Enabled" ViewChanged="svConsoleOut_ViewChanged">
+                            <TextBlock x:Name="tbConsoleOut" IsTextSelectionEnabled="True"/>
+                        </ScrollViewer>
+
+                        <TextBox x:Name="tbCommandInput" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch" Margin="0,5,5,5"/>
+                        <Button x:Name="btnSendCommand" Content="Send" Grid.Row="1" Grid.Column="1" Margin="5" Tapped="btnSendCommand_Tapped"/>
+                    </Grid>
+                </controls:Expander>
+
+                <!-- BinUploader -->
+                <controls:Expander Header="BinUploader" IsExpanded="False" HorizontalContentAlignment="Stretch" Grid.Row="1">
+                    <Grid x:Name="gridBinUploader" Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Text="Siunčiama" Grid.Row="0" Grid.Column="0" Margin="5,0"/>
+                        <ProgressBar x:Name="pbUpload" Grid.Row="0" Grid.Column="1" Margin="5,0"/>
+
+                        <TextBlock Text="Flashinama" Grid.Row="0" Grid.Column="2" Margin="15,0,5,0"/>
+                        <ProgressBar x:Name="pbWrite" Grid.Row="0" Grid.Column="3" Margin="5,0"/>
+
+                        <TextBlock Text="Tikrinama" Grid.Row="0" Grid.Column="4" Margin="15,0,5,0"/>
+                        <ProgressBar x:Name="pbVerify" Grid.Row="0" Grid.Column="5" Margin="5,0"/>
+
+                        <ScrollViewer Name="svUploaderInfo" Height="300" Grid.Row="1" Grid.ColumnSpan="6" Visibility="Visible" Margin="0,5" ViewChanged="svUploaderInfo_ViewChanged">
+                            <TextBlock x:Name="tbInfo" TextWrapping="WrapWholeWords" Margin="5"/>
+                        </ScrollViewer>
+
+                        <StackPanel Orientation="Vertical" Grid.Row="2" Grid.ColumnSpan="6">
+                            <TextBlock x:Name="tbFileName" Text="Nepasirinktas failas..." Margin="5"/>
+                            <StackPanel Orientation="Horizontal">
+                                <Button x:Name="btnPickFile" Content="Pasirinkti BIN failą..." Margin="5" Tapped="btnPickFile_Tapped"/>
+                                <Button x:Name="btnAbort" IsEnabled="False" Content="Atšaukti" Margin="5" Tapped="btnAbort_Tapped"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                </controls:Expander>
+                
+                <!-- Actions -->
+                <controls:Expander Header="Veiksmai" IsExpanded="False" HorizontalContentAlignment="Stretch" Grid.Row="2">
+                    <Grid Grid.Row="5">
+
+                    </Grid>
+                </controls:Expander>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</Page>

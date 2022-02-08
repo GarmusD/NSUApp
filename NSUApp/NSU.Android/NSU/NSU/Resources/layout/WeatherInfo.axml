@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="704px"
+    android:minHeight="470px">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:paddingTop="5dp">
+            <TextView
+                android:text="Temperatūra"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="#0000FF" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:paddingTop="5dp">
+            <TextView
+                android:text="Lauke: "
+                android:textSize="15sp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:textColor="#0000FF" />
+            <TextView
+                android:text="-.- °C"
+                android:textSize="15sp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/WILaukoTempTextView"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:textColor="#0000FF" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5px">
+            <TextView
+                android:text="Požeminio oro: "
+                android:textSize="15sp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="right"
+                android:layout_weight="1"
+                android:textColor="#0000FF" />
+            <TextView
+                android:text="-.- °C"
+                android:textSize="15sp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/WIPozemioTempTextView"
+                android:layout_weight="1"
+                android:textColor="#0000FF" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="200px"
+            android:minHeight="300px"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10px">
+            <android.webkit.WebView
+                android:minWidth="250px"
+                android:minHeight="250px"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/wvWeatherInfoGrafikas" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

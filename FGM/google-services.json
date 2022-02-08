@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "566333988043",
+    "firebase_url": "https://namu-silumos-ukis.firebaseio.com",
+    "project_id": "namu-silumos-ukis",
+    "storage_bucket": "namu-silumos-ukis.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:566333988043:android:87093ab870d0e72f",
+        "android_client_info": {
+          "package_name": "lt.dgs.nsu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "566333988043-6l91kkvbr0eu3gds8od7a12tnsj30ccb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgU19NpyBiP4uVpwEmXID88VGt8_hWMJA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
