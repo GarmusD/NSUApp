@@ -20,7 +20,8 @@ namespace NSU.Droid
         Thread worker;
 
         bool silentDC;
-        object lockobj = new object(), dclock = new object();
+        private readonly object lockobj = new object();
+        private readonly object dclock = new object();
         volatile bool connected, connecting;
         private bool disconnecting = false;
 
@@ -57,7 +58,7 @@ namespace NSU.Droid
                         {
                             for (int i = 0; i < addrs.Length; i++)
                             {
-                                NSULog.Debug(LogTag, $"    {i + 1}: {addrs[i].ToString()}");
+                                NSULog.Debug(LogTag, $"    {i + 1}: {addrs[i]}");
                             }
                         }
                         else
