@@ -16,7 +16,7 @@ An app for Windows Desktop is most advanced software, allowing to create NSU set
 ## Windows
 ![](https://www.dropbox.com/s/rzdcaiepvjnnpqo/img_win1.jpg?dl=0)
 ![](https://www.dropbox.com/s/dlz1llev378lm2v/img_win2.jpg?dl=0)
-![](https://www.dropbox.com/s/5pdaxuntlg1xhhp/img_win3.jpg?dl=0))
+![](https://www.dropbox.com/s/5pdaxuntlg1xhhp/img_win3.jpg?dl=0)
 ![](https://www.dropbox.com/s/knsir0oo0z3g6vr/img_win4.jpg?dl=0)
 ![](https://www.dropbox.com/s/8x71wimzimv8pd9/img_win5.jpg?dl=0)
 ![](https://www.dropbox.com/s/17uvojzyszl7j2e/img_win6.jpg?dl=0)
