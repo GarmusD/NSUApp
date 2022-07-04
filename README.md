@@ -9,14 +9,21 @@ An app for Windows Desktop is most advanced software, allowing to create NSU set
 # Screenshots
 
 ## Android
-![](https://github.com/GarmusD/NSUApp/blob/1320945e99210225af8181413642d14e9108ab7e/images/img_andr1.jpg)
-![](https://github.com/GarmusD/NSUApp/blob/1320945e99210225af8181413642d14e9108ab7e/images/img_andr2.jpg)
-![](https://github.com/GarmusD/NSUApp/blob/1320945e99210225af8181413642d14e9108ab7e/images/img_andr3.jpg)
+![](https://www.dropbox.com/s/wbqw9lxmj27amps/img_andr1.jpg?raw=1)
+
+![](https://www.dropbox.com/s/d96i2cqph7dzf4z/img_andr2.jpg?raw=1)
+
+![](https://www.dropbox.com/s/2sof3u0trhqmhtz/img_andr3.jpg?raw=1)
 
 ## Windows
-![](https://github.com/GarmusD/NSUApp/blob/1320945e99210225af8181413642d14e9108ab7e/images/img_win1.jpg)
-![](https://github.com/GarmusD/NSUApp/blob/1320945e99210225af8181413642d14e9108ab7e/images/img_win2.jpg)
-![](https://github.com/GarmusD/NSUApp/blob/1320945e99210225af8181413642d14e9108ab7e/images/img_win3.jpg)
-![](https://github.com/GarmusD/NSUApp/blob/1320945e99210225af8181413642d14e9108ab7e/images/img_win4.jpg)
-![](https://github.com/GarmusD/NSUApp/blob/1320945e99210225af8181413642d14e9108ab7e/images/img_win5.jpg)
-![](https://github.com/GarmusD/NSUApp/blob/1320945e99210225af8181413642d14e9108ab7e/images/img_win6.jpg)
+![](https://www.dropbox.com/s/rzdcaiepvjnnpqo/img_win1.jpg?raw=1)
+
+![](https://www.dropbox.com/s/dlz1llev378lm2v/img_win2.jpg?raw=1)
+
+![](https://www.dropbox.com/s/5pdaxuntlg1xhhp/img_win3.jpg?raw=1)
+
+![](https://www.dropbox.com/s/knsir0oo0z3g6vr/img_win4.jpg?raw=1)
+
+![](https://www.dropbox.com/s/8x71wimzimv8pd9/img_win5.jpg?raw=1)
+
+![](https://www.dropbox.com/s/17uvojzyszl7j2e/img_win6.jpg?raw=1)
